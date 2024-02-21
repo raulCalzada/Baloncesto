@@ -10,13 +10,14 @@ jobs:
      - name: pruebas-unitarias
        run: mvn test
      - name: compilar la aplicación sin repetir pruebas
-       run: mvn package -DskipTests=true
+       run: mvn package -DskipTests=false
     test:
       needs: build
       runs-on: self-hosted 
       steps: 
       - name: pruebas-funcionales 
         run: echo "pruebas-funcionales" 
+
     qa:
       needs: test
       runs-on: self-hosted 
