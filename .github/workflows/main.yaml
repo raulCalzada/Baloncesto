@@ -7,12 +7,10 @@ jobs:
      steps:
      - name: descargar repostorio
        uses: actions/checkout@v3
-       with:
-          node-version: '20'
      - name: pruebas-unitarias
        run: mvn test
      - name: compilar la aplicación sin repetir pruebas
-       run: mvn package 
+       run: mvn package -DskipTests=true
     test:
       needs: build
       runs-on: self-hosted 
