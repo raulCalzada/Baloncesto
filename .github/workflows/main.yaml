@@ -19,7 +19,7 @@ jobs:
         run: echo "pruebas-funcionales" 
       - name: instalar aplicación en Tomcat
         run: |
-          cd D:/integracion continua/Baloncesto
+          cd "D:/integracion continua/Baloncesto"
           mvn package -DskipTests=true
           cp -r target/Baloncesto /usr/local/tomcat/webapps
       - name: preparar base de datos de prueba
