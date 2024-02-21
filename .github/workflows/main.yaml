@@ -10,7 +10,7 @@ jobs:
      - name: pruebas-unitarias
        run: mvn test
      - name: compilar la aplicación sin repetir pruebas
-       run: mvn package -DskipTests=false
+       run: mvn package 
     test:
       needs: build
       runs-on: self-hosted 
