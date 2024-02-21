@@ -2,7 +2,7 @@ name: CI
 on: push
 
 jobs:
-   build:
+    build:
      runs-on: ubuntu-latest
      steps:
      - name: descargar repostorio
@@ -11,3 +11,28 @@ jobs:
        run: mvn test
      - name: compilar la aplicación sin repetir pruebas
        run: mvn package -DskipTests=true
+    test:
+      needs: build
+      runs-on: self-hosted 
+      steps: 
+      - name: pruebas-funcionales 
+        run: echo "pruebas-funcionales" 
+    qa:
+      needs: test
+      runs-on: self-hosted 
+      steps: 
+      - name: calidad-codigo 
+        run: echo "calidad-codigo" 
+    stage:
+      needs: qa
+      runs-on: ubuntu-latest
+      steps:
+      - name: pre-producción
+        run: echo "pre"
+    deploy:
+      needs: stage
+      runs-on: ubuntu-latest 
+      steps: 
+      - name: despliegue 
+        run: echo "despliegue"
+  
