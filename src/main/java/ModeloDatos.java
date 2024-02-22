@@ -47,9 +47,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            // No lee de la tabla
-            System.out.println("No lee de la tabla");
-            System.out.println("El error es: " + e.getMessage());
+            e.printStackTrace();
         }
         return (existe);
     }
@@ -61,9 +59,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            // No modifica la tabla
-            System.out.println("No modifica la tabla");
-            System.out.println("El error es: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -74,6 +70,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -88,6 +85,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
+            e.printStackTrace(); 
         }
         return votos;
     }
@@ -103,6 +101,8 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
+            jugadores.add("Raul");
+            jugadores.add(e.getMessage());
         }
         return jugadores;
     }
