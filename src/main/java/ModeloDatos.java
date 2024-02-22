@@ -1,4 +1,7 @@
 import java.sql.*;
+import java.util.List;
+
+import scorex.util.ArrayList;
 
 public class ModeloDatos {
 
@@ -75,6 +78,42 @@ public class ModeloDatos {
             System.out.println("No inserta en la tabla");
             System.out.println("El error es: " + e.getMessage());
         }
+    }
+
+    public int getVotos(String nombre) {
+        int votos = 0;
+        try {
+            set = con.createStatement();
+            rs = set.executeQuery("SELECT votos FROM Jugadores WHERE nombre = '" + nombre + "'");
+            if (rs.next()) {
+                votos = rs.getInt("votos");
+            }
+            rs.close();
+            set.close();
+        } catch (Exception e) {
+            // Error al obtener los votos
+            System.out.println("Error al obtener los votos");
+            System.out.println("El error es: " + e.getMessage());
+        }
+        return votos;
+    }
+
+    public List<String> getJugadores(){
+        List<String> jugadores = new ArrayList<String>();
+        try {
+            set = con.createStatement();
+            rs = set.executeQuery("SELECT nombre FROM Jugadores");
+            if (rs.next()) {
+                jugadores.add(rs.getString("Jugadores"));
+            }
+            rs.close();
+            set.close();
+        } catch (Exception e) {
+            // Error al obtener los votos
+            System.out.println("Error al obtener los kugadores");
+            System.out.println("El error es: " + e.getMessage());
+        }
+        return jugadores;
     }
 
     public void cerrarConexion() {
