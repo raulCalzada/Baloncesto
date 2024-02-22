@@ -74,9 +74,6 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            // No inserta en la tabla
-            System.out.println("No inserta en la tabla");
-            System.out.println("El error es: " + e.getMessage());
         }
     }
 
@@ -91,9 +88,6 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            // Error al obtener los votos
-            System.out.println("Error al obtener los votos");
-            System.out.println("El error es: " + e.getMessage());
         }
         return votos;
     }
@@ -109,9 +103,6 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            // Error al obtener los votos
-            System.out.println("Error al obtener los kugadores");
-            System.out.println("El error es: " + e.getMessage());
         }
         return jugadores;
     }
@@ -120,7 +111,6 @@ public class ModeloDatos {
         try {
             con.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
     }
 
