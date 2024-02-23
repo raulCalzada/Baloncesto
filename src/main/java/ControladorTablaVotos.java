@@ -22,9 +22,6 @@ public class ControladorTablaVotos extends HttpServlet {
         for(String jugador : jugadores) {
             votos.add(modeloDatos.getVotos(jugador));
         }
-        
-        System.out.println("Jugadores: " + jugadores);
-        System.out.println("Votos: " + votos);
 
         modeloDatos.cerrarConexion();
   

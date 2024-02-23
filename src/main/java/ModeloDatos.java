@@ -25,9 +25,7 @@ public class ModeloDatos {
             con = DriverManager.getConnection(url, dbUser, dbPass);
 
         } catch (Exception e) {
-            // No se ha conectado
-            System.out.println("No se ha podido conectar");
-            System.out.println("El error es: " + e.getMessage());
+            // No se ha conectado       
         }
     }
 
@@ -47,7 +45,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
         return (existe);
     }
@@ -59,7 +57,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            e.printStackTrace();
+        
         }
     }
 
@@ -70,7 +68,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            e.printStackTrace();
+    
         }
     }
 
@@ -85,7 +83,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            e.printStackTrace(); 
+            votos = 0;
         }
         return votos;
     }
@@ -95,7 +93,7 @@ public class ModeloDatos {
         try {
             set = con.createStatement();
             rs = set.executeQuery("SELECT nombre FROM Jugadores");
-            if (rs.next()) {
+            while (rs.next()) {
                 jugadores.add(rs.getString("nombre"));
             }
             rs.close();
