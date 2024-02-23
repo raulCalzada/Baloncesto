@@ -25,8 +25,7 @@ public class ModeloDatos {
             con = DriverManager.getConnection(url, dbUser, dbPass);
 
         } catch (Exception e) {
-            // No se ha conectado
-
+            // No se ha conectado       
         }
     }
 
@@ -46,9 +45,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            // No lee de la tabla
-            System.out.println("No lee de la tabla");
-            System.out.println("El error es: " + e.getMessage());
+            
         }
         return (existe);
     }
@@ -60,6 +57,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
+        
         }
     }
 
