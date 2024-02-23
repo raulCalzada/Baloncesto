@@ -1,4 +1,7 @@
 import java.sql.*;
+import java.util.List;
+
+import scorex.util.ArrayList;
 
 public class ModeloDatos {
 
@@ -22,9 +25,7 @@ public class ModeloDatos {
             con = DriverManager.getConnection(url, dbUser, dbPass);
 
         } catch (Exception e) {
-            // No se ha conectado
-            System.out.println("No se ha podido conectar");
-            System.out.println("El error es: " + e.getMessage());
+            // No se ha conectado       
         }
     }
 
@@ -44,9 +45,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            // No lee de la tabla
-            System.out.println("No lee de la tabla");
-            System.out.println("El error es: " + e.getMessage());
+            
         }
         return (existe);
     }
@@ -58,9 +57,7 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            // No modifica la tabla
-            System.out.println("No modifica la tabla");
-            System.out.println("El error es: " + e.getMessage());
+        
         }
     }
 
@@ -71,17 +68,47 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            // No inserta en la tabla
-            System.out.println("No inserta en la tabla");
-            System.out.println("El error es: " + e.getMessage());
+    
         }
+    }
+
+    public int getVotos(String nombre) {
+        int votos = 0;
+        try {
+            set = con.createStatement();
+            rs = set.executeQuery("SELECT votos FROM Jugadores WHERE nombre = '" + nombre + "'");
+            if (rs.next()) {
+                votos = rs.getInt("votos");
+            }
+            rs.close();
+            set.close();
+        } catch (Exception e) {
+            votos = 0;
+        }
+        return votos;
+    }
+
+    public List<String> getJugadores(){
+        List<String> jugadores = new ArrayList<String>();
+        try {
+            set = con.createStatement();
+            rs = set.executeQuery("SELECT nombre FROM Jugadores");
+            while (rs.next()) {
+                jugadores.add(rs.getString("nombre"));
+            }
+            rs.close();
+            set.close();
+        } catch (Exception e) {
+            jugadores.add("Raul");
+            jugadores.add(e.getMessage());
+        }
+        return jugadores;
     }
 
     public void cerrarConexion() {
         try {
             con.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
     }
 
