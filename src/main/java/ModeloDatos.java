@@ -1,4 +1,7 @@
 import java.sql.*;
+import java.util.List;
+
+import scorex.util.ArrayList;
 
 public class ModeloDatos {
 
@@ -44,7 +47,8 @@ public class ModeloDatos {
             set.close();
         } catch (Exception e) {
             // No lee de la tabla
-
+            System.out.println("No lee de la tabla");
+            System.out.println("El error es: " + e.getMessage());
         }
         return (existe);
     }
@@ -57,7 +61,8 @@ public class ModeloDatos {
             set.close();
         } catch (Exception e) {
             // No modifica la tabla
-
+            System.out.println("No modifica la tabla");
+            System.out.println("El error es: " + e.getMessage());
         }
     }
 
@@ -69,26 +74,16 @@ public class ModeloDatos {
             set.close();
         } catch (Exception e) {
             // No inserta en la tabla
-
+            System.out.println("No inserta en la tabla");
+            System.out.println("El error es: " + e.getMessage());
         }
-    }
-
-    public void resetearVotos() {
-        try {
-            set = con.createStatement();
-            set.executeUpdate(" UPDATE Jugadores SET votos = 0;");
-            rs.close();
-            set.close();
-        } catch (Exception e) {
-            // No resetea la tabla
-        }
+        return jugadores;
     }
 
     public void cerrarConexion() {
         try {
             con.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
     }
 
