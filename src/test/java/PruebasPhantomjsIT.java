@@ -45,7 +45,7 @@ public class PruebasPhantomjsIT {
         driver.findElement(By.xpath("//button[contains(text(),'Tabla Votos')]")).click();
 
         // Comprobar que los votos para cada jugador son cero en la página "VerVotos.jsp"
-        driver.navigate().to("http://localhost:8080/Baloncesto/VerVotos.jsp");
+        driver.navigate().to("http://localhost:8080/Baloncesto/ControladorTablaVotos");
 
         // Comprobar que los votos para cada jugador son cero en la página "VerVotos.jsp"
         List<WebElement> elementosVotos = driver.findElements(By.xpath("//table//tr//td[2]"));
