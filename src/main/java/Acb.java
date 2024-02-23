@@ -16,6 +16,10 @@ public class Acb extends HttpServlet {
         HttpSession s = req.getSession(true);
         String nombreP = (String) req.getParameter("txtNombre");
         String nombre = (String) req.getParameter("R1");
+        if (nombre == null) {
+            bd.resetearVotos();
+        }
+
         if (nombre.equals("Otros")) {
             nombre = (String) req.getParameter("txtOtros");
         }
