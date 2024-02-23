@@ -27,6 +27,7 @@
     <%
     }
     %>
+    <br> <a href="index.html"> Ir al comienzo</a>
 </table>
 
 </body>

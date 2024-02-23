@@ -96,7 +96,7 @@ public class ModeloDatos {
             set = con.createStatement();
             rs = set.executeQuery("SELECT nombre FROM Jugadores");
             if (rs.next()) {
-                jugadores.add(rs.getString("Jugadores"));
+                jugadores.add(rs.getString("nombre"));
             }
             rs.close();
             set.close();
