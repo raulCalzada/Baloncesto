@@ -7,17 +7,20 @@ public class Acb extends HttpServlet {
 
     private ModeloDatos bd;
 
+    @Override
     public void init(ServletConfig cfg) throws ServletException {
         bd = new ModeloDatos();
         bd.abrirConexion();
     }
 
+    @Override
     public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession s = req.getSession(true);
         String nombreP = (String) req.getParameter("txtNombre");
         String nombre = (String) req.getParameter("R1");
         if (nombre == null) {
-            bd.resetearVotos();
+            try {bd.resetearVotos();} catch (Exception e) {};
+            return;
         }
 
         if (nombre.equals("Otros")) {
@@ -33,6 +36,7 @@ public class Acb extends HttpServlet {
         res.sendRedirect(res.encodeRedirectURL("TablaVotos.jsp"));
     }
 
+    @Override
     public void destroy() {
         bd.cerrarConexion();
         super.destroy();
