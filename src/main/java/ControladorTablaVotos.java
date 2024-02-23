@@ -15,6 +15,11 @@ public class ControladorTablaVotos extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ModeloDatos modeloDatos = new ModeloDatos();
         modeloDatos.abrirConexion();
+
+        if (nombre == null) {
+            try {bd.resetearVotos();} catch (Exception e) {};
+            return;
+        }
         
         // Obtener los datos de los jugadores y sus votos
         List<String> jugadores = modeloDatos.getJugadores();

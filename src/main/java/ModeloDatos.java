@@ -60,9 +60,6 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            // No modifica la tabla
-            System.out.println("No modifica la tabla");
-            System.out.println("El error es: " + e.getMessage());
         }
     }
 
@@ -73,11 +70,51 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            // No inserta en la tabla
-            System.out.println("No inserta en la tabla");
-            System.out.println("El error es: " + e.getMessage());
+    
+        }
+    }
+
+    public int getVotos(String nombre) {
+        int votos = 0;
+        try {
+            set = con.createStatement();
+            rs = set.executeQuery("SELECT votos FROM Jugadores WHERE nombre = '" + nombre + "'");
+            if (rs.next()) {
+                votos = rs.getInt("votos");
+            }
+            rs.close();
+            set.close();
+        } catch (Exception e) {
+            votos = 0;
+        }
+        return votos;
+    }
+
+    public List<String> getJugadores(){
+        List<String> jugadores = new ArrayList<String>();
+        try {
+            set = con.createStatement();
+            rs = set.executeQuery("SELECT nombre FROM Jugadores");
+            while (rs.next()) {
+                jugadores.add(rs.getString("nombre"));
+            }
+            rs.close();
+            set.close();
+        } catch (Exception e) {
+            jugadores.add("Raul");
+            jugadores.add(e.getMessage());
         }
         return jugadores;
+    }
+
+    public void resetearVotos() {
+        try {
+            set = con.createStatement();
+            set.executeUpdate("UPDATE Jugadores SET votos=0");
+            rs.close();
+            set.close();
+        } catch (Exception e) {
+        }
     }
 
     public void cerrarConexion() {
