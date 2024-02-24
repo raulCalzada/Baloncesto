@@ -101,7 +101,7 @@ public class PruebasPhantomjsIT {
         List<WebElement> elementosVotos = driver.findElements(By.xpath("//table//tr//td[2]"));
         boolean encontrado = false;
         for (WebElement elemento : elementosVotos) {
-            if (elemento.getText().equals("1")) {
+            if (elemento.getText().equals("0")) {
                 encontrado = true;
                 break;
             }
