@@ -43,6 +43,7 @@ public class PruebasPhantomjsIT {
 
         caps.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, new String[] {"--web-security=no", "--ignore-ssl-errors=yes"});
         
+        driver = new PhantomJSDriver(caps);
         // Abre la página principal
         driver.navigate().to("http://localhost:8080/Baloncesto/");
 
