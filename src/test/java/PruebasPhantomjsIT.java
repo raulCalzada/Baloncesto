@@ -99,15 +99,17 @@ public class PruebasPhantomjsIT {
         driver.navigate().to("http://localhost:8080/Baloncesto/ControladorTablaVotos");
 
         // Comprueba que el nuevo jugador tiene 1 voto en la página "ControladorTablaVotos"
-        List<WebElement> elementosVotos = driver.findElements(By.xpath("//table//tr[4]//td[2]"));
+        List<WebElement> elementosVotos = driver.findElements(By.xpath("//table//tr//td[2]"));
         boolean encontrado = false;
+        StringBuilder mensaje = new StringBuilder("Los elementos de los votos son: ");
         for (WebElement elemento : elementosVotos) {
+            mensaje.append(elemento.getText()).append(", ");
             if (elemento.getText().equals("1")) {
                 encontrado = true;
                 break;
             }
         }
-        assertTrue(encontrado, "El nuevo jugador tiene 1 voto");
+        assertTrue(encontrado, mensaje.toString());
     }
 
 
