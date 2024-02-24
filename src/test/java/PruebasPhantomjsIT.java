@@ -80,7 +80,7 @@ public class PruebasPhantomjsIT {
         driver.findElement(By.name("B2")).click();
 
         // Introduce el nombre de un nuevo jugador en la caja de texto
-        driver.findElement(By.name("txtNombre")).sendKeys("NuevoJugador");
+        driver.findElement(By.name("txtOtros")).sendKeys("NuevoJugador");
 
         // Marca la opción "Otro"
         driver.findElement(By.xpath("//input[@value='Otros']")).click();
@@ -106,7 +106,7 @@ public class PruebasPhantomjsIT {
                 break;
             }
         }
-        assertTrue(encontrado, "El nuevo jugador no tiene 1 voto");
+        assertTrue(encontrado, "El nuevo jugador tiene 1 voto");
     }
 
 
