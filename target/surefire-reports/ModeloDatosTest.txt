@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ModeloDatosTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.076 s <<< FAILURE! -- in ModeloDatosTest
-ModeloDatosTest.testActualizarJugadorIncrementaVotos -- Time elapsed: 0.060 s <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.063 s <<< FAILURE! -- in ModeloDatosTest
+ModeloDatosTest.testActualizarJugadorIncrementaVotos -- Time elapsed: 0.049 s <<< ERROR!
 java.lang.ExceptionInInitializerError
 	at org.mockito.cglib.core.KeyFactory$Generator.generateClass(KeyFactory.java:167)
 	at org.mockito.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:25)

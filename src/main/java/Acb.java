@@ -22,7 +22,7 @@ public class Acb extends HttpServlet {
             try {bd.resetearVotos();} catch (Exception e) { // Ignorar excepción porque no es crítica en este contexto
                 // No necesitamos tomar medidas adicionales ya que no afecta al flujo principal};
             return;
-        }
+        };
         if (nombre.equals("Otros")) {
             nombre = (String) req.getParameter("txtOtros");
         }
