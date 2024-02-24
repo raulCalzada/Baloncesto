@@ -45,7 +45,8 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-            
+             // Ignorar excepción porque no es crítica en este contexto
+            // No necesitamos tomar medidas adicionales ya que no afecta al flujo principal
         }
         return (existe);
     }
@@ -57,7 +58,8 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-        
+         // Ignorar excepción porque no es crítica en este contexto
+            // No necesitamos tomar medidas adicionales ya que no afecta al flujo principal
         }
     }
 
@@ -68,7 +70,8 @@ public class ModeloDatos {
             rs.close();
             set.close();
         } catch (Exception e) {
-    
+     // Ignorar excepción porque no es crítica en este contexto
+            // No necesitamos tomar medidas adicionales ya que no afecta al flujo principal
         }
     }
 
@@ -119,6 +122,7 @@ public class ModeloDatos {
         try {
             con.close();
         } catch (Exception e) {
+             // Ignorar excepción porque no es crítica en este contexto
         }
     }
 
