@@ -19,7 +19,8 @@ public class Acb extends HttpServlet {
         String nombreP = (String) req.getParameter("txtNombre");
         String nombre = (String) req.getParameter("R1");
         if (nombre == null) {
-            try {bd.resetearVotos();} catch (Exception e) {};
+            try {bd.resetearVotos();} catch (Exception e) { // Ignorar excepción porque no es crítica en este contexto
+                // No necesitamos tomar medidas adicionales ya que no afecta al flujo principal};
             return;
         }
         if (nombre.equals("Otros")) {
