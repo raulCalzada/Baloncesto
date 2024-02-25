@@ -18,8 +18,8 @@ public class Acb extends HttpServlet {
         HttpSession s = req.getSession(true);
         String nombreP = (String) req.getParameter("txtNombre");
         String nombre = (String) req.getParameter("R1");
-        String reset = req.getParameter("B2"); 
-        if (reset != null && reset.equals("Reset")) { // Verifica si se ha pulsado el botón "Reset"
+        String reset = req.getParameter("reset"); 
+        if ("true".equals(reset)) { 
             try {
                 bd.resetearVotos();} catch (Exception e) { // Ignorar excepción porque no es crítica en este context
                 };
