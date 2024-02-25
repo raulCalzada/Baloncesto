@@ -18,18 +18,17 @@ public class Acb extends HttpServlet {
         HttpSession s = req.getSession(true);
         String nombreP = req.getParameter("txtNombre");
         String nombre = req.getParameter("R1");
-        String reset = req.getParameter("R2");
-
+        String reset = req.getParameter("reset");
+    
         if ("true".equals(reset)) {
             try {
                 bd.resetearVotos();
             } catch (Exception e) {
                 // Manejar la excepción si es necesario
-                e.printStackTrace();
             }
             return;
         }
-
+    
         if (nombre != null) {
             if (nombre.equals("Otros")) {
                 nombre = req.getParameter("txtOtros");
@@ -39,11 +38,11 @@ public class Acb extends HttpServlet {
             } else {
                 bd.insertarJugador(nombre);
             }
+        }
+        
+        s.setAttribute("nombreCliente", nombreP);
+        res.sendRedirect(res.encodeRedirectURL("TablaVotos.jsp"));
     }
-    
-    s.setAttribute("nombreCliente", nombreP);
-    res.sendRedirect(res.encodeRedirectURL("TablaVotos.jsp"));
-}
 
     @Override
     public void destroy() {
