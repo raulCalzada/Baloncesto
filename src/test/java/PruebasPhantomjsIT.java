@@ -108,6 +108,7 @@ public class PruebasPhantomjsIT {
                 encontrado = true;
                 break;
             }
+            
         }
         assertTrue(encontrado, mensaje.toString());
     }
