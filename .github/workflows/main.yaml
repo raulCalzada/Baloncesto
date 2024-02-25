@@ -24,9 +24,8 @@ jobs:
       - name: preparar base de datos de prueba
         run: |
           mysql -u root < db/baloncesto.sql
-          sh /usr/local/tomcat/bin/catalina.sh start
           export DATABASE_HOST="jdbc:mysql://localhost"
-          export DATABASE_PORT="3306"´
+          export DATABASE_PORT="3306"
           export DATABASE_NAME="baloncesto"
           export DATABASE_USER="usuario"
           export DATABASE_PASS="clave"
