@@ -18,7 +18,7 @@ public class Acb extends HttpServlet {
         HttpSession s = req.getSession(true);
         String nombreP = req.getParameter("txtNombre");
         String nombre = req.getParameter("R1");
-        String reset = req.getParameter("reset");
+        String reset = req.getParameter("B2");
     
         if ("true".equals(reset)) {
             try {
