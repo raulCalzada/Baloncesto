@@ -25,10 +25,10 @@ jobs:
         run: |
           mysql -u root < db/baloncesto.sql
           export DATABASE_HOST="jdbc:mysql://localhost"
-          export DATABASE_PORT="3306"´
+          export DATABASE_PORT="3306"
           export DATABASE_NAME="baloncesto"
           export DATABASE_USER="usuario"
-          export DATABASE_USER="usuario"
+          export DATABASE_PASS="clave"
           sh /usr/local/tomcat/bin/catalina.sh stop
           sh /usr/local/tomcat/bin/catalina.sh start
       - name: realizar pruebas funcionales
