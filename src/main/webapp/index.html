@@ -8,31 +8,37 @@ Author : Roberto Barchino (aplicacion original)
         <link href="estilos.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-    <center><H1>Votaci&oacute;n al mejor jugador de la liga ACB</H1></center><hr>
-    <form action="Acb" method="POST">
-        <p align="left">Nombre del Visitante: <input type="text" size="20"
-                                                     name="txtNombre">
-            eMail: <input type="text" size="20" name="txtMail"></p> REAL MADRID:<br>
+        <center><H1>Votación al mejor jugador de la liga ACB</H1></center><hr>
+        <form action="Acb" method="POST">
+            <p align="left">Nombre del Visitante: <input type="text" size="20" name="txtNombre">
+                eMail: <input type="text" size="20" name="txtMail"></p> REAL MADRID:<br>
 
-        <img src="Llull.jpg" width="100" height="67" alt="Llul"/>
-        <p align="left"><input type="radio" name="R1" value="Llull">Llull</p>
+            <img src="Llull.jpg" width="100" height="67" alt="Llul"/>
+            <p align="left"><input type="radio" name="R1" value="Llull">Llull</p>
 
-        <img src="Rudy.jpg" width="100" height="67" alt="Rudy"/>
-        <p align="left"><input type="radio" name="R1" value="Rudy">Rudy</p>
+            <img src="Rudy.jpg" width="100" height="67" alt="Rudy"/>
+            <p align="left"><input type="radio" name="R1" value="Rudy">Rudy</p>
 
-        <img src="Tavares.jpg" width="100" height="67" alt="Tavares"/>
-        <p align="left"><input type="radio" name="R1" value="Tavares">Tavares</p>
+            <img src="Tavares.jpg" width="100" height="67" alt="Tavares"/>
+            <p align="left"><input type="radio" name="R1" value="Tavares">Tavares</p>
 
-        <br>
-        <p align="left"><input type="radio" name="R1" value="Otros">Otro
-            <input type="text" size="20" name="txtOtros"></p>
-        <p align="left">
-            <input type="submit" name="B1" value="Votar">
-            <input type="reset" name="B2" value="Reset"></p>
-    </form>
-    <button onclick="window.location.href='/Baloncesto/ControladorTablaVotos'">
-        Tabla Votos
-    </button>
-</body>
+            <br>
+            <p align="left"><input type="radio" name="R1" value="Otros">Otro
+                <input type="text" size="20" name="txtOtros"></p>
+            <p align="left">
+                <input type="submit" name="B1" value="Votar">
+            </p>
+        </form>
+        
+        <!-- Segundo formulario para el botón de reseteo -->
+        <form action="Acb" method="POST">
+            <input type="hidden" name="reset" value="true">
+            <input type="submit" name="B2" value="Reset">
+        </form>
+    
+        <button onclick="window.location.href='/Baloncesto/ControladorTablaVotos'">
+            Tabla Votos
+        </button>
+    </body>
 </html>
 
