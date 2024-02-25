@@ -10,6 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
+import java.util.List;
+
 public class PruebasPhantomjsIT {
     private static WebDriver driver = null;
 
