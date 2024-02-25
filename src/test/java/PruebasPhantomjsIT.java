@@ -10,8 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
-import java.util.List;
-
 public class PruebasPhantomjsIT {
     private static WebDriver driver = null;
 
@@ -50,7 +48,7 @@ public class PruebasPhantomjsIT {
         driver.navigate().to("http://localhost:8080/Baloncesto/");
 
         // Pulsar el botón "Poner votos a cero"
-        driver.findElement(By.name("reset")).click();
+        driver.findElement(By.name("B2")).click();
 
         // Pulsar el botón "Ver votos"
         driver.findElement(By.xpath("//button[contains(text(),'Tabla Votos')]")).click();
@@ -80,7 +78,7 @@ public class PruebasPhantomjsIT {
         driver.navigate().to("http://localhost:8080/Baloncesto/");
 
         // Pulsar el botón "Poner votos a cero"
-        driver.findElement(By.name("reset")).click();
+        driver.findElement(By.name("B2")).click();
 
         // Introduce el nombre de un nuevo jugador en la caja de texto
         driver.findElement(By.name("txtOtros")).sendKeys("NuevoJugador");
@@ -110,7 +108,6 @@ public class PruebasPhantomjsIT {
                 encontrado = true;
                 break;
             }
-            
         }
         assertTrue(encontrado, mensaje.toString());
     }
