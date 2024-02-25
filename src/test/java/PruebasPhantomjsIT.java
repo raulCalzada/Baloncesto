@@ -52,6 +52,8 @@ public class PruebasPhantomjsIT {
         // Pulsar el botón "Poner votos a cero"
         driver.findElement(By.name("B2")).click();
 
+        driver.navigate().to("http://localhost:8080/Baloncesto/");
+
         // Pulsar el botón "Ver votos"
         driver.findElement(By.xpath("//button[contains(text(),'Tabla Votos')]")).click();
 
@@ -81,6 +83,8 @@ public class PruebasPhantomjsIT {
 
         // Pulsar el botón "Poner votos a cero"
         driver.findElement(By.name("B2")).click();
+
+        driver.navigate().to("http://localhost:8080/Baloncesto/");
 
         // Introduce el nombre de un nuevo jugador en la caja de texto
         driver.findElement(By.name("txtOtros")).sendKeys("NuevoJugador");

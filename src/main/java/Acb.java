@@ -18,12 +18,13 @@ public class Acb extends HttpServlet {
         HttpSession s = req.getSession(true);
         String nombreP = (String) req.getParameter("txtNombre");
         String nombre = (String) req.getParameter("R1");
-        if (nombre == null) {
-            try {bd.resetearVotos();} catch (Exception e) { // Ignorar excepción porque no es crítica en este contexto
-                // No necesitamos tomar medidas adicionales ya que no afecta al flujo principal
+        String reset = req.getParameter("reset"); 
+        if ("true".equals(reset)) { 
+            try {
+                bd.resetearVotos();} catch (Exception e) { // Ignorar excepción porque no es crítica en este context
+                };
+                return;
             };
-            return;
-        };
         if (nombre.equals("Otros")) {
             nombre = (String) req.getParameter("txtOtros");
         }
